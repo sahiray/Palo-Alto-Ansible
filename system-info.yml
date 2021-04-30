@@ -1,0 +1,9 @@
+---
+
+- name: Show system info op command
+    panos_op:
+      cmd: 'show system info'
+    register: result
+
+  - name: returned output in the XML format
+    debug: msg='{{ result.stdout_xml }}'
